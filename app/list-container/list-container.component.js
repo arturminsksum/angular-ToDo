@@ -1,5 +1,5 @@
 angular.
-	module('myApp').
+	module('listContainer').
 	component('listContainer', {
 		templateUrl: 'list-container/list-container.template.html',
 		controller: function listContainerController() {
@@ -26,7 +26,10 @@ angular.
 
 	    };
 	    this.removeList = function(list) {
-	    	_.pull(this.lists,list)
+		    var idx = this.lists.indexOf(list);
+		    if (idx >= 0) {
+		      this.lists.splice(idx, 1);
+		    }
 	    }
 		}
 
