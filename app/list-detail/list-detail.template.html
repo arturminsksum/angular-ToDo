@@ -1,23 +1,12 @@
 
     <section class="list list-inline">
       <h1>{{$ctrl.list.listName}}</h1>
-      <!-- <a ng-click="$ctrl.onDelete()"> -->
       <a ng-click="$ctrl.removeList()">
         <div class="remove remove-list"></div>
       </a>
 
-      <div class='card'
-          	ng-repeat='card in $ctrl.getCards()'>
-      	{{card.description}}
-      </div>
-      <section class='new-card'>
-        <form ng-submit="$ctrl.createCard()">
-          <input type='text'
-                 ng-model='$ctrl.cardDescription'
-                 class='card-input'
-                 placeholder='New card'>
-        </form>
-      </section>      
+	    <list-card list = $ctrl.list>    		
+	    </list-card>    
 
     </section>
 
