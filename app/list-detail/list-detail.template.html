@@ -1,12 +1,13 @@
 
     <section class="list list-inline">
       <h1>{{$ctrl.list.listName}}</h1>
-      <a ng-click="$ctrl.onDelete()">
+      <!-- <a ng-click="$ctrl.onDelete()"> -->
+      <a ng-click="$ctrl.removeList()">
         <div class="remove remove-list"></div>
       </a>
 
       <div class='card'
-          	ng-repeat='card in $ctrl.onGet()'>
+          	ng-repeat='card in $ctrl.getCards()'>
       	{{card.description}}
       </div>
       <section class='new-card'>

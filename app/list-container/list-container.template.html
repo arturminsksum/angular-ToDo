@@ -3,8 +3,6 @@
     <list-detail 
     	list="list" 
     	on-delete="$ctrl.removeList(list)" 
-    	on-get="$ctrl.getCards(list)" 
-    	on-create="$ctrl.createCard(list, cardDescription)"
     	ng-repeat="list in $ctrl.lists">    		
     </list-detail>
     <section class="list new-list list-inline">
