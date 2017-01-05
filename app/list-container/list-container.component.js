@@ -31,6 +31,38 @@ angular.
 		      this.lists.splice(idx, 1);
 		    }
 	    }
+
+		  this.cards = [
+		    {
+		      id: 1,
+		      description: 'Fix bug in player',
+		      list_id: 1
+		    },
+		    {
+		      id: 2,
+		      description: 'Add feature with D3',
+		      list_id: 2
+		    },
+		    {
+		      id: 3,
+		      description: 'Learn AngularJS',
+		      list_id: 3
+		    }
+		  ];
+
+			this.getCards = function (list) {
+			  return _.filter(this.cards, { list_id: list.id });
+			}
+
+			this.createCard = function (list, cardDescription) {
+			  this.cards.push({
+			    id: _.uniqueId('card_'),
+			    description: cardDescription,
+			    list_id: list.id
+			  });
+			};
+
+
 		}
 
 	});

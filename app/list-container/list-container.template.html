@@ -1,6 +1,12 @@
 <section id="lists-container" class="lists-container">
   <div class="row">
-    <list-detail list="list" on-delete="$ctrl.removeList(list)" ng-repeat="list in $ctrl.lists"></list-detail>
+    <list-detail 
+    	list="list" 
+    	on-delete="$ctrl.removeList(list)" 
+    	on-get="$ctrl.getCards(list)" 
+    	on-create="$ctrl.createCard(list, cardDescription)"
+    	ng-repeat="list in $ctrl.lists">    		
+    </list-detail>
     <section class="list new-list list-inline">
       <form ng-submit="$ctrl.addList()">
         <input type="text" ng-model="$ctrl.listName">
