@@ -35,6 +35,23 @@ angular.
 			  this.cardDescription = '';
 			};
 
+			this.editingCard = null;
+
+			this.deleteCard = function(card) {
+				return _.pull(this.cards, card);
+			}
+
+			this.editCard = function (card) {
+				card.isEditing = !card.isEditing;
+				this.editingCard = angular.copy(card);
+			}
+
+			this.updateCard = function () {
+				var card = _.find(this.cards, {id:this.editingCard.id});
+				card.description = this.editingCard.description;
+				card.isEditing = !card.isEditing;		
+			  this.editingCard = null;			  		
+			}
 		},
 
 		bindings: {
