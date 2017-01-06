@@ -12,6 +12,7 @@ angular.
 
 		bindings: {
 	    list: '<',
+	    lists: '<',
 	    onDelete: '&'
 	  }
 	});

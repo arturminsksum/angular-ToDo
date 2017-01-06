@@ -1,7 +1,8 @@
 <section id="lists-container" class="lists-container">
   <div class="row">
     <list-detail 
-    	list="list" 
+    	list="list"
+    	lists="$ctrl.lists"  
     	on-delete="$ctrl.removeList(list)" 
     	ng-repeat="list in $ctrl.lists">    		
     </list-detail>
