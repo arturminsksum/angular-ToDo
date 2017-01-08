@@ -56,6 +56,17 @@ angular.
 				card.isEditing = false;
 			  this.editingCard = null;
 			}
+
+			var KEYS = {
+				ESCAPE: 27
+			}
+
+			this.closeEditing = function (e, card) {
+				if (_.isEqual(e.keyCode, KEYS.ESCAPE)) {
+					card.isEditing = false;
+				}
+			}
+
 		},
 
 		bindings: {

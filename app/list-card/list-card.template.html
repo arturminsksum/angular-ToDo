@@ -13,7 +13,9 @@
     </div>
     <div ng-switch-when="true">
       <form ng-submit='$ctrl.updateCard()'>
-        <input type="text" ng-model='$ctrl.editingCard.description'>
+        <input type="text" 
+                ng-model='$ctrl.editingCard.description'
+                ng-keyup='$ctrl.closeEditing($event, card)'>
         <select class='select-list'
             ng-model='$ctrl.editingCard.list_id'
             ng-change='$ctrl.updateCard()'
